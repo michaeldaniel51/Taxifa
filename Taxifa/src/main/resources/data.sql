@@ -1,0 +1,2 @@
+--insert into TaxiBooking values (40,33,1);
+--insert into TaxiBooking values (41,33,1);
