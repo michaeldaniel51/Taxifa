@@ -11,6 +11,16 @@ import java.util.Date;
 @Data
 public class TokenResponse {
 
+
+    private final String token;
+
+    @JsonProperty(value = "expires_At")
+    private final Date expiresAt;
+
+    @JsonProperty(value = "issued_At")
+    private final Date issuedAt;
+
+
     public TokenResponse(String token, Date expiresAt, Date issuedAt) {
         this.token = token;
         this.expiresAt = expiresAt;
@@ -28,16 +38,6 @@ public class TokenResponse {
     public Date getIssuedAt() {
         return issuedAt;
     }
-
-    private final String token;
-
-    @JsonProperty(value = "expires_At")
-    private final Date expiresAt;
-
-    @JsonProperty(value = "issued_At")
-    private final Date issuedAt;
-
-
 
 
 

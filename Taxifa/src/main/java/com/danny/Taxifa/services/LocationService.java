@@ -1,6 +1,6 @@
 package com.danny.Taxifa.services;
 
-import com.danny.Taxifa.annotations.LogExecutionTime;
+import com.danny.Taxifa.annotations.ShowExecutionTime;
 import com.danny.Taxifa.entities.Location;
 import com.danny.Taxifa.repositories.LocationRepository;
 import com.danny.Taxifa.utils.DestinationUtils;
@@ -16,7 +16,7 @@ public class LocationService {
     @Autowired
     private LocationRepository locationRepository;
 
-    @LogExecutionTime
+    @ShowExecutionTime
     public Location createLocation(Location location){
 
         location.setArrivalTime(DestinationUtils.arrivalTime());
@@ -38,7 +38,7 @@ public class LocationService {
         return "Location with " + id + " has been deleted successfully";
 
     }
-    @LogExecutionTime
+    @ShowExecutionTime
     public Location UpdateLocation(Location location){
         return locationRepository.save(location);
     }

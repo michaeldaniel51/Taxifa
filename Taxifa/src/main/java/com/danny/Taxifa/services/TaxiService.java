@@ -1,6 +1,6 @@
 package com.danny.Taxifa.services;
 
-import com.danny.Taxifa.annotations.LogExecutionTime;
+import com.danny.Taxifa.annotations.ShowExecutionTime;
 import com.danny.Taxifa.entities.Taxi;
 import com.danny.Taxifa.repositories.TaxiRepository;
 import com.danny.Taxifa.utils.TrackingIdUtils;
@@ -18,7 +18,7 @@ public class TaxiService {
 
 
 
-    @LogExecutionTime
+    @ShowExecutionTime
     public Taxi addTaxi(Taxi taxi){
         taxi.setTrackingId(TrackingIdUtils.trackingNo());
         return taxiRepository.save(taxi);
@@ -47,7 +47,7 @@ public class TaxiService {
 
 
 
-    @LogExecutionTime
+    @ShowExecutionTime
     public Taxi updateTaxi(Taxi taxi){
 
       return  taxiRepository.save(taxi);

@@ -6,11 +6,6 @@ import java.util.UUID;
 public class TrackingIdUtils {
 
 
-
-
-
-
-
     public static String trackingNo (){
         String g = "000";
         Random f = new Random();

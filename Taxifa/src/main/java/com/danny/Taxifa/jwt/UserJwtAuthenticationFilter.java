@@ -27,6 +27,7 @@ import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Date;
 
+import static com.danny.Taxifa.utils.TokenUtils.EXPIRATION_TIME;
 import static java.lang.Long.parseLong;
 import static java.time.LocalDateTime.now;
 import static java.util.Date.from;
@@ -37,15 +38,12 @@ public class UserJwtAuthenticationFilter extends UsernamePasswordAuthenticationF
 
 
     private final AuthenticationManager authenticationManager;
-    private final Logger logger = LoggerFactory.getLogger(getClass());
-    private final String tokenExpiresAt;
 
 
-    public UserJwtAuthenticationFilter(AuthenticationManager authenticationManager, String tokenExpiresAt){
+    public UserJwtAuthenticationFilter(AuthenticationManager authenticationManager){
         this.authenticationManager = authenticationManager;
-        this.tokenExpiresAt = tokenExpiresAt;
 
-        setFilterProcessesUrl("/auth/users");
+        setFilterProcessesUrl("/auth/login");
     }
 
 
@@ -62,8 +60,7 @@ public class UserJwtAuthenticationFilter extends UsernamePasswordAuthenticationF
                             creds.getUsername(),
                             creds.getPassword(), new ArrayList<>()));
         } catch (IOException e) {
-            logger.info(e.getMessage());
-            throw new CustomException(e.getMessage(), getClass());
+            throw new RuntimeException(e);
         }
     }
 
@@ -75,13 +72,13 @@ public class UserJwtAuthenticationFilter extends UsernamePasswordAuthenticationF
 
         User user = (User)auth.getPrincipal();
         Date issuedAt = from(Instant.now());
-        Date expiresAt = from(now().plusMinutes(parseLong(tokenExpiresAt)).toInstant(ZoneOffset.UTC));
+        Date expiresAt = new Date(System.currentTimeMillis()+ EXPIRATION_TIME);
 
         String token = com.auth0.jwt.JWT.create()
                 .withSubject(user.getUsername())
                 .withIssuedAt(issuedAt)
-                .withClaim("first_name",user.getUsername())
-                .withClaim("phone_number", user.getContact())
+                .withClaim("username",user.getUsername())
+                .withClaim("contact", user.getContact())
                 .sign(Algorithm.HMAC512(TokenUtils.SECRET_KEY.getBytes()));
 
 

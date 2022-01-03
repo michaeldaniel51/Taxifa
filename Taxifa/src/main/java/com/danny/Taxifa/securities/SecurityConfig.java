@@ -3,6 +3,7 @@ package com.danny.Taxifa.securities;
 import com.danny.Taxifa.jwt.UserJwtAuthenticationFilter;
 import com.danny.Taxifa.jwt.UserJwtAuthorizationFilter;
 import com.danny.Taxifa.services.UserService;
+import com.danny.Taxifa.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -15,16 +16,47 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-@Configuration
+import static com.danny.Taxifa.utils.DatabaseUtils.DATABASE_URL;
+import static com.danny.Taxifa.utils.TokenUtils.SIGN_UP_URL;
+
+//@Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
-        @Autowired
-        private UserService userService;
+    private final UserService userService;
 
 
+    public SecurityConfig(UserService userService){
+        this.userService = userService;
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+                .cors().disable()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.POST,SIGN_UP_URL).permitAll()
+                .antMatchers(DATABASE_URL).permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .addFilter(new UserJwtAuthenticationFilter(authenticationManager()))
+                .addFilter(new UserJwtAuthorizationFilter(authenticationManager()))
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    }
+
+//    @Bean
+//    CorsConfigurationSource corsConfigurationSource(){
+//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**",new CorsConfiguration().applyPermitDefaultValues());
+//    return source;
+//    }
 
 
     @Override
@@ -32,55 +64,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
     }
 
-    //    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//
-//        http.headers().frameOptions().disable();
-//        http.cors()
-//                .disable()
-//                .csrf()
-//                .disable()
-//                .authorizeHttpRequests()
-//                .anyRequest().permitAll();
-//    }
+    @Override
+    public void configure (WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/v2/api-docs", "/auth/**", "/configuration/ui", "/swagger-resources/**",
+                "/configuration/security", "/configuration/**", "/swagger-ui.html", "/webjars/**", "/swagger-ui/**", DATABASE_URL);
+    }
 
-
-
-//    private final UserService userService;
-//    private final String expires;
-//
-//    public SecurityConfig(UserService userService, @Value( "${app.token.expires:5}") String expires){
-//        this.userService = userService;
-//        this.expires = expires;
-//    }
-//
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.csrf().disable()
-//                .cors().disable()
-//                .authorizeRequests().antMatchers("/swagger-ui/**").permitAll()
-//                .antMatchers("/user/**","/user/auth/","/auth/**").permitAll()
-//           .antMatchers("/users/**").permitAll()
-//                .anyRequest()
-//                .authenticated()
-//                .and()
-//                .addFilter(new UserJwtAuthenticationFilter(authenticationManager(),expires))
-//                .addFilter(new UserJwtAuthorizationFilter(authenticationManager()))
-//                .sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and()
-//                .httpBasic().disable()
-//                .formLogin().disable();
-//    }
-//
-//
-//
-//    @Override
-//    public void configure (WebSecurity web) throws Exception {
-//        web.ignoring().antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources/**",
-//                "/configuration/security", "/configuration/**", "/swagger-ui.html", "/webjars/**", "/swagger-ui/**", "/h2-console");
-//    }
-//
 
             @Bean
             public BCryptPasswordEncoder passwordEncoder(){

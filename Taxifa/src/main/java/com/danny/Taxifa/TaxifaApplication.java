@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-public class TaxifaApplication extends SpringBootServletInitializer {
+public class TaxifaApplication {
 
 
 	public static void main(String[] args) {

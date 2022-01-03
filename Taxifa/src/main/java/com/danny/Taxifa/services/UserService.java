@@ -1,6 +1,6 @@
 package com.danny.Taxifa.services;
 
-import com.danny.Taxifa.annotations.LogExecutionTime;
+import com.danny.Taxifa.annotations.ShowExecutionTime;
 import com.danny.Taxifa.entities.User;
 import com.danny.Taxifa.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +18,23 @@ public class UserService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
-    @LogExecutionTime
+
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+    }
+
+    @ShowExecutionTime
     public String addUser(User user) {
 
         String message;
         message = user.getFirstname() + " you have successfully registered to taxifa \n" +
                 "please proceed to confirm your account";
+
 
         userRepository.save(user);
         return message;
@@ -44,7 +55,7 @@ public class UserService implements UserDetailsService {
         return userRepository.findById(userId);
     }
 
-    @LogExecutionTime
+    @ShowExecutionTime
     public void UpdateUser(User user) {
             userRepository.save(user);
     }
@@ -63,13 +74,7 @@ public class UserService implements UserDetailsService {
 //    }
 
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        return userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-
-    }
 
     public List<User> findByFirstName(String firstname){
 

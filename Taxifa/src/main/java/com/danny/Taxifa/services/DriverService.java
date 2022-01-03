@@ -1,7 +1,7 @@
 package com.danny.Taxifa.services;
 
 
-import com.danny.Taxifa.annotations.LogExecutionTime;
+import com.danny.Taxifa.annotations.ShowExecutionTime;
 import com.danny.Taxifa.entities.Driver;
 import com.danny.Taxifa.exceptions.DriverNotFoundException;
 import com.danny.Taxifa.exceptions.PassengerNotFoundException;
@@ -21,7 +21,7 @@ public class DriverService {
     @Autowired
     private UserRepository userRepository;
 
-    @LogExecutionTime
+    @ShowExecutionTime
     public Driver createDriver(Driver driver){
 
 //        String message = driver.getProfile().getFirstname() + " Thanks for registering as a driver \n" +
@@ -44,12 +44,12 @@ public class DriverService {
 
     }
 
-    @LogExecutionTime
+    @ShowExecutionTime
     public Driver updateDriverInfo(Driver driver){
         return  driverRepository.save(driver);
     }
 
-    @LogExecutionTime
+    @ShowExecutionTime
     public List<Driver> findDriverByUserProfile(int id){
 
         return driverRepository.findByProfile(userRepository

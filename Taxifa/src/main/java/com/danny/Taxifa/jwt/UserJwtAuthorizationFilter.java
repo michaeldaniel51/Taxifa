@@ -13,7 +13,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+
+import static com.danny.Taxifa.utils.TokenUtils.HEADER_NAME;
+import static com.danny.Taxifa.utils.TokenUtils.SECRET_KEY;
 
 public class UserJwtAuthorizationFilter extends BasicAuthenticationFilter {
 
@@ -29,9 +33,7 @@ public class UserJwtAuthorizationFilter extends BasicAuthenticationFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
 
-
-        String header = req.getHeader("Authorization");
-
+        String header = req.getHeader(HEADER_NAME);
 
         if (header == null || !header.startsWith("Bearer ")){
 
@@ -53,18 +55,18 @@ public class UserJwtAuthorizationFilter extends BasicAuthenticationFilter {
 
         try{
 
-            String token = req.getHeader("Authorization");
+            String token = req.getHeader(HEADER_NAME);
 
             if (token != null){
 
-                String user = JWT.require(Algorithm.HMAC512(TokenUtils.SECRET_KEY.getBytes()))
+                String user = JWT.require(Algorithm.HMAC512(SECRET_KEY.getBytes()))
                         .build()
                         .verify(token.replace("Bearer ",""))
                         .getSubject();
 
                 if(user != null){
 
-                    return new UsernamePasswordAuthenticationToken(user,null, Collections.emptyList());
+                    return new UsernamePasswordAuthenticationToken(user,null, new ArrayList<>());
                 }
 
                 return null;
