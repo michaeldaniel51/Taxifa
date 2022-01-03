@@ -12,7 +12,7 @@ import java.util.Date;
 @Component
 public class LogAspect {
 
-    @Around("@annotation(LogExecutionTime)")
+    @Around("@annotation(ShowExecutionTime)")
     public Object logg(ProceedingJoinPoint joinPoint) throws Throwable{
 
         Date dat =  new Date();

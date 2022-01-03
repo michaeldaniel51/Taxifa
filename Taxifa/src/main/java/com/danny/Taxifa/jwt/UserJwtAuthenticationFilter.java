@@ -93,6 +93,7 @@ public class UserJwtAuthenticationFilter extends UsernamePasswordAuthenticationF
         res.setContentType(MediaType.APPLICATION_JSON_VALUE);
         res.getWriter().write(new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(response));
         res.getWriter().flush();
+        System.out.println(tokenResponse);
     }
 
     @Override

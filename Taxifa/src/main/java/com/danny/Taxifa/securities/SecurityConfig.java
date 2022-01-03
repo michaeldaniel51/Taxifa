@@ -23,7 +23,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import static com.danny.Taxifa.utils.DatabaseUtils.DATABASE_URL;
 import static com.danny.Taxifa.utils.TokenUtils.SIGN_UP_URL;
 
-//@Configuration
+@Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .cors().disable()
+         //       .cors().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST,SIGN_UP_URL).permitAll()
                 .antMatchers(DATABASE_URL).permitAll()
@@ -51,12 +51,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
-//    @Bean
-//    CorsConfigurationSource corsConfigurationSource(){
-//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        source.registerCorsConfiguration("/**",new CorsConfiguration().applyPermitDefaultValues());
-//    return source;
-//    }
+    @Bean
+    CorsConfigurationSource corsConfigurationSource(){
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**",new CorsConfiguration().applyPermitDefaultValues());
+    return source;
+    }
 
 
     @Override
@@ -64,11 +64,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
     }
 
-    @Override
-    public void configure (WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/v2/api-docs", "/auth/**", "/configuration/ui", "/swagger-resources/**",
-                "/configuration/security", "/configuration/**", "/swagger-ui.html", "/webjars/**", "/swagger-ui/**", DATABASE_URL);
-    }
+//    @Override
+//    public void configure (WebSecurity web) throws Exception {
+//        web.ignoring().antMatchers("/v2/api-docs", "/auth/**", "/configuration/ui", "/swagger-resources/**",
+//                "/configuration/security", "/configuration/**", "/swagger-ui.html", "/webjars/**", "/swagger-ui/**", DATABASE_URL);
+//    }
 
 
             @Bean

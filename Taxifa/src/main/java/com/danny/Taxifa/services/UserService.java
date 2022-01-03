@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -50,6 +51,8 @@ public class UserService implements UserDetailsService {
 
         return userRepository.findAll();
     }
+
+
 
     public Optional<User> findById(int userId) {
         return userRepository.findById(userId);
