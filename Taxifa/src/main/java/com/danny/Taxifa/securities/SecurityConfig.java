@@ -38,7 +38,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-         //       .cors().disable()
+     //           .cors().disable()
+                .headers()
+                .frameOptions()
+                .disable()
+                .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST,SIGN_UP_URL).permitAll()
                 .antMatchers(DATABASE_URL).permitAll()
@@ -67,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //    @Override
 //    public void configure (WebSecurity web) throws Exception {
 //        web.ignoring().antMatchers("/v2/api-docs", "/auth/**", "/configuration/ui", "/swagger-resources/**",
-//                "/configuration/security", "/configuration/**", "/swagger-ui.html", "/webjars/**", "/swagger-ui/**", DATABASE_URL);
+//                "/configuration/security", "/configuration/**", "/swagger-ui.html", "/webjars/**", "/swagger-ui/**",DATABASE_URL);
 //    }
 
 
