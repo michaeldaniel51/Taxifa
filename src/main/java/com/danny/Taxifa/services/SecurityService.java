@@ -8,19 +8,21 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
-//@Service
+@Service
 public class SecurityService {
 
-//        @Autowired
-//    private UserRepository userRepository;
-//
-//
-//    public User authenticatedUser(){
-//
-//        return userRepository.findByUsername((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())
-//                .orElseThrow(()-> new UsernameNotFoundException("cant find user"));
-//    }
+    @Autowired
+    private UserRepository userRepository;
 
 
+    public User authenticatedUser() {
 
-}
+
+        User user = userRepository.findByUsername((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())
+                .orElseThrow(()-> new UsernameNotFoundException("cant find user"));
+                return user;
+
+    }
+
+
+    }

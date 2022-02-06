@@ -15,10 +15,12 @@ public class TaxiBookingService {
     @Autowired
     private TaxiBookingRepository taxiBookingRepository;
 
+    @Autowired
+    private SecurityService securityService;
 
     @ShowExecutionTime
     public TaxiBooking book(TaxiBooking taxiBooking){
-
+        taxiBooking.setPassenger(securityService.authenticatedUser());
             return taxiBookingRepository.save(taxiBooking);
 
     }

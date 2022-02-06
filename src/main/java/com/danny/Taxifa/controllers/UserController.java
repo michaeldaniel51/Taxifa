@@ -29,12 +29,11 @@ public class UserController {
         return ResponseEntity.ok(userService.addUser(user));
     }
 
-    @GetMapping("/d")
-    public List<User> sam (){
-      return userService.nameFilter();
+    @GetMapping("char/{namechar}")
+    public List<User> findNameBychar (@PathVariable char namechar){
+      return userService.nameFilter(namechar);
 
     }
-
 
 
     @GetMapping

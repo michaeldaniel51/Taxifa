@@ -49,12 +49,18 @@ public class UserService implements UserDetailsService {
 
 
 
-    public List<User> nameFilter(){
+    public List<User> nameFilter(char namechar){
 
-     List<User> i = findAll().stream().filter(u -> u.getFirstname().startsWith("d")).collect(Collectors.toList());
+     List<User> i = findAll()
+             .stream()
+             .filter(u -> u.getFirstname()
+             .startsWith(String.valueOf(namechar)))
+             .collect(Collectors.toList());
 
      return i;
     }
+
+
 
 
     public List<User> findAll() {
