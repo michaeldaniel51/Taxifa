@@ -1,9 +1,9 @@
-package com.danny.Taxifa.securities;
+package com.danny.taxifa.securities;
 
-import com.danny.Taxifa.jwt.UserJwtAuthenticationFilter;
-import com.danny.Taxifa.jwt.UserJwtAuthorizationFilter;
-import com.danny.Taxifa.services.UserService;
-import com.danny.Taxifa.utils.TokenUtils;
+import com.danny.taxifa.jwt.UserJwtAuthenticationFilter;
+import com.danny.taxifa.jwt.UserJwtAuthorizationFilter;
+import com.danny.taxifa.services.UserService;
+import com.danny.taxifa.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -20,8 +20,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import static com.danny.Taxifa.utils.DatabaseUtils.DATABASE_URL;
-import static com.danny.Taxifa.utils.TokenUtils.SIGN_UP_URL;
+import static com.danny.taxifa.utils.DatabaseUtils.DATABASE_URL;
+import static com.danny.taxifa.utils.TokenUtils.SIGN_UP_URL;
 
 @Configuration
 @EnableWebSecurity

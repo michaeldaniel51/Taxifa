@@ -1,6 +1,6 @@
-package com.danny.Taxifa.exceptions;
+package com.danny.taxifa.exceptions;
 
-import com.danny.Taxifa.enums.Destination;
+import com.danny.taxifa.enums.Destination;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

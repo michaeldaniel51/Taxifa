@@ -1,7 +1,7 @@
-package com.danny.Taxifa.controllers;
+package com.danny.taxifa.controllers;
 
-import com.danny.Taxifa.entities.FeedBack;
-import com.danny.Taxifa.services.FeedBackService;
+import com.danny.taxifa.entities.FeedBack;
+import com.danny.taxifa.services.FeedBackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

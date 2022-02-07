@@ -1,4 +1,4 @@
-package com.danny.Taxifa.exceptions;
+package com.danny.taxifa.exceptions;
 
 import lombok.Getter;
 

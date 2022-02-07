@@ -1,4 +1,4 @@
-package com.danny.Taxifa.controllers;
+package com.danny.taxifa.controllers;
 
 
 import org.springframework.http.HttpStatus;

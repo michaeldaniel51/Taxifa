@@ -1,7 +1,7 @@
-package com.danny.Taxifa.exceptionhandler;
+package com.danny.taxifa.exceptionhandler;
 
-import com.danny.Taxifa.exceptions.DestinationException;
-import com.danny.Taxifa.exceptions.DriverNotFoundException;
+import com.danny.taxifa.exceptions.DestinationException;
+import com.danny.taxifa.exceptions.DriverNotFoundException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

@@ -1,4 +1,4 @@
-package com.danny.Taxifa.annotations;
+package com.danny.taxifa.annotations;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

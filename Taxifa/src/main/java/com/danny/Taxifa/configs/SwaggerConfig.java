@@ -1,4 +1,4 @@
-package com.danny.Taxifa.configs;
+package com.danny.taxifa.configs;
 
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;

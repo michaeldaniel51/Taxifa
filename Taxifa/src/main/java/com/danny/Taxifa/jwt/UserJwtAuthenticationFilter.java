@@ -1,13 +1,13 @@
-package com.danny.Taxifa.jwt;
+package com.danny.taxifa.jwt;
 
 import com.auth0.jwt.algorithms.Algorithm;
-import com.danny.Taxifa.dto.Response;
-import com.danny.Taxifa.dto.ResponseStatus;
-import com.danny.Taxifa.dto.TokenResponse;
-import com.danny.Taxifa.dto.UserLogin;
-import com.danny.Taxifa.entities.User;
-import com.danny.Taxifa.exceptions.CustomException;
-import com.danny.Taxifa.utils.TokenUtils;
+import com.danny.taxifa.dto.Response;
+import com.danny.taxifa.dto.ResponseStatus;
+import com.danny.taxifa.dto.TokenResponse;
+import com.danny.taxifa.dto.UserLogin;
+import com.danny.taxifa.entities.User;
+import com.danny.taxifa.exceptions.CustomException;
+import com.danny.taxifa.utils.TokenUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static com.danny.Taxifa.utils.TokenUtils.EXPIRATION_TIME;
+import static com.danny.taxifa.utils.TokenUtils.EXPIRATION_TIME;
 import static java.lang.Long.parseLong;
 import static java.time.LocalDateTime.now;
 import static java.util.Date.from;

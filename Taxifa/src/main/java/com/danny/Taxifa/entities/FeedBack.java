@@ -1,6 +1,6 @@
-package com.danny.Taxifa.entities;
+package com.danny.taxifa.entities;
 
-import com.danny.Taxifa.enums.Rating;
+import com.danny.taxifa.enums.Rating;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;

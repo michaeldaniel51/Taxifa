@@ -1,7 +1,7 @@
-package com.danny.Taxifa.controllers;
+package com.danny.taxifa.controllers;
 
-import com.danny.Taxifa.entities.Location;
-import com.danny.Taxifa.services.LocationService;
+import com.danny.taxifa.entities.Location;
+import com.danny.taxifa.services.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

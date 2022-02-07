@@ -1,7 +1,7 @@
-package com.danny.Taxifa.services;
+package com.danny.taxifa.services;
 
-import com.danny.Taxifa.entities.User;
-import com.danny.Taxifa.repositories.UserRepository;
+import com.danny.taxifa.entities.User;
+import com.danny.taxifa.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

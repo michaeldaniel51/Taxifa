@@ -1,11 +1,11 @@
-package com.danny.Taxifa.dto;
+package com.danny.taxifa.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
-import static com.danny.Taxifa.dto.ResponseStatus.Created;
-import static com.danny.Taxifa.dto.ResponseStatus.Successful;
+import static com.danny.taxifa.dto.ResponseStatus.Created;
+import static com.danny.taxifa.dto.ResponseStatus.Successful;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)

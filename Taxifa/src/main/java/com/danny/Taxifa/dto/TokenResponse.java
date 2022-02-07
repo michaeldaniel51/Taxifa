@@ -1,4 +1,4 @@
-package com.danny.Taxifa.dto;
+package com.danny.taxifa.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

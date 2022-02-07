@@ -1,7 +1,7 @@
-package com.danny.Taxifa.services;
+package com.danny.taxifa.services;
 
-import com.danny.Taxifa.entities.FeedBackReply;
-import com.danny.Taxifa.repositories.FeedBackReplyRepository;
+import com.danny.taxifa.entities.FeedBackReply;
+import com.danny.taxifa.repositories.FeedBackReplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

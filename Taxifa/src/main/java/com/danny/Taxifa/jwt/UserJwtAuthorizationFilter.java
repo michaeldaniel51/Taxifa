@@ -1,8 +1,8 @@
-package com.danny.Taxifa.jwt;
+package com.danny.taxifa.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.danny.Taxifa.utils.TokenUtils;
+import com.danny.taxifa.utils.TokenUtils;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static com.danny.Taxifa.utils.TokenUtils.HEADER_NAME;
-import static com.danny.Taxifa.utils.TokenUtils.SECRET_KEY;
+import static com.danny.taxifa.utils.TokenUtils.HEADER_NAME;
+import static com.danny.taxifa.utils.TokenUtils.SECRET_KEY;
 
 public class UserJwtAuthorizationFilter extends BasicAuthenticationFilter {
 

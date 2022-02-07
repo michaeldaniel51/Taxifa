@@ -1,8 +1,6 @@
-package com.danny.Taxifa.entities;
+package com.danny.taxifa.entities;
 
-import com.danny.Taxifa.enums.TripType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
+import com.danny.taxifa.enums.TripType;
 
 import javax.persistence.*;
 

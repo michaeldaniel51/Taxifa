@@ -1,6 +1,6 @@
-package com.danny.Taxifa.entities;
+package com.danny.taxifa.entities;
 
-import com.danny.Taxifa.enums.Destination;
+import com.danny.taxifa.enums.Destination;
 import lombok.ToString;
 
 import javax.persistence.*;

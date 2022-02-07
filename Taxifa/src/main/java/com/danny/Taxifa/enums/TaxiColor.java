@@ -1,4 +1,4 @@
-package com.danny.Taxifa.enums;
+package com.danny.taxifa.enums;
 
 public enum TaxiColor {
 

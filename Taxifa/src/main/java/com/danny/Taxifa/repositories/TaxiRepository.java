@@ -1,6 +1,6 @@
-package com.danny.Taxifa.repositories;
+package com.danny.taxifa.repositories;
 
-import com.danny.Taxifa.entities.Taxi;
+import com.danny.taxifa.entities.Taxi;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

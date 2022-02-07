@@ -1,4 +1,4 @@
-package com.danny.Taxifa.utils;
+package com.danny.taxifa.utils;
 
 import java.util.Random;
 import java.util.UUID;

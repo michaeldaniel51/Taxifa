@@ -1,9 +1,4 @@
-package com.danny.Taxifa.entities;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreType;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import org.springframework.data.repository.query.parser.Part;
+package com.danny.taxifa.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

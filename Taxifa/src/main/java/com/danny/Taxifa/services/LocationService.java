@@ -1,9 +1,9 @@
-package com.danny.Taxifa.services;
+package com.danny.taxifa.services;
 
-import com.danny.Taxifa.annotations.ShowExecutionTime;
-import com.danny.Taxifa.entities.Location;
-import com.danny.Taxifa.repositories.LocationRepository;
-import com.danny.Taxifa.utils.DestinationUtils;
+import com.danny.taxifa.annotations.ShowExecutionTime;
+import com.danny.taxifa.entities.Location;
+import com.danny.taxifa.repositories.LocationRepository;
+import com.danny.taxifa.utils.DestinationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

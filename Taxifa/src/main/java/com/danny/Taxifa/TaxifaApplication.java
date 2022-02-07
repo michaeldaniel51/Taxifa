@@ -1,8 +1,8 @@
-package com.danny.Taxifa;
+package com.danny.taxifa;
 
-import com.danny.Taxifa.entities.User;
-import com.danny.Taxifa.repositories.UserRepository;
-import com.danny.Taxifa.services.UserService;
+import com.danny.taxifa.entities.User;
+import com.danny.taxifa.repositories.UserRepository;
+import com.danny.taxifa.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

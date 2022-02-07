@@ -1,12 +1,12 @@
-package com.danny.Taxifa.services;
+package com.danny.taxifa.services;
 
 
-import com.danny.Taxifa.annotations.ShowExecutionTime;
-import com.danny.Taxifa.entities.Driver;
-import com.danny.Taxifa.exceptions.DriverNotFoundException;
-import com.danny.Taxifa.exceptions.PassengerNotFoundException;
-import com.danny.Taxifa.repositories.DriverRepository;
-import com.danny.Taxifa.repositories.UserRepository;
+import com.danny.taxifa.annotations.ShowExecutionTime;
+import com.danny.taxifa.entities.Driver;
+import com.danny.taxifa.exceptions.DriverNotFoundException;
+import com.danny.taxifa.exceptions.PassengerNotFoundException;
+import com.danny.taxifa.repositories.DriverRepository;
+import com.danny.taxifa.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

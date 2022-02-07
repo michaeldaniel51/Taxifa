@@ -1,9 +1,9 @@
-package com.danny.Taxifa.entities;
+package com.danny.taxifa.entities;
 
 
-import com.danny.Taxifa.enums.CarType;
-import com.danny.Taxifa.enums.Departures;
-import com.danny.Taxifa.enums.TaxiColor;
+import com.danny.taxifa.enums.CarType;
+import com.danny.taxifa.enums.Departures;
+import com.danny.taxifa.enums.TaxiColor;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

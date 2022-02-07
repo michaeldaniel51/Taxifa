@@ -1,8 +1,8 @@
-package com.danny.Taxifa.services;
+package com.danny.taxifa.services;
 
-import com.danny.Taxifa.annotations.ShowExecutionTime;
-import com.danny.Taxifa.entities.TaxiBooking;
-import com.danny.Taxifa.repositories.TaxiBookingRepository;
+import com.danny.taxifa.annotations.ShowExecutionTime;
+import com.danny.taxifa.entities.TaxiBooking;
+import com.danny.taxifa.repositories.TaxiBookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

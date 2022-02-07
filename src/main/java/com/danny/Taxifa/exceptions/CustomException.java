@@ -1,4 +1,4 @@
-package com.danny.Taxifa.exceptions;
+package com.danny.taxifa.exceptions;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

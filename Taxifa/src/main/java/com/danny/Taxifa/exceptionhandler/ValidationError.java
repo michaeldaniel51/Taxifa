@@ -1,4 +1,4 @@
-package com.danny.Taxifa.exceptionhandler;
+package com.danny.taxifa.exceptionhandler;
 
 
 import lombok.Data;

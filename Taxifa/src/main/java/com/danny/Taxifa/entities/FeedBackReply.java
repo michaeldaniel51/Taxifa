@@ -1,4 +1,4 @@
-package com.danny.Taxifa.entities;
+package com.danny.taxifa.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,9 +1,9 @@
-package com.danny.Taxifa.controllers;
+package com.danny.taxifa.controllers;
 
 
-import com.danny.Taxifa.entities.Taxi;
-import com.danny.Taxifa.entities.User;
-import com.danny.Taxifa.services.TaxiService;
+import com.danny.taxifa.entities.Taxi;
+import com.danny.taxifa.entities.User;
+import com.danny.taxifa.services.TaxiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

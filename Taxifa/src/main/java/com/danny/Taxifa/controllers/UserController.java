@@ -1,8 +1,8 @@
-package com.danny.Taxifa.controllers;
+package com.danny.taxifa.controllers;
 
-import com.danny.Taxifa.annotations.ShowExecutionTime;
-import com.danny.Taxifa.entities.User;
-import com.danny.Taxifa.services.UserService;
+import com.danny.taxifa.annotations.ShowExecutionTime;
+import com.danny.taxifa.entities.User;
+import com.danny.taxifa.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

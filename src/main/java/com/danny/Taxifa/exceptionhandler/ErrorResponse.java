@@ -1,6 +1,4 @@
-package com.danny.Taxifa.exceptionhandler;
-
-import lombok.Data;
+package com.danny.taxifa.exceptionhandler;
 
 import java.util.HashMap;
 import java.util.List;
